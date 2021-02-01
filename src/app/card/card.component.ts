@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Card} from '../app.component';
 
 @Component({
   selector: 'app-card',
@@ -7,8 +8,11 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class CardComponent implements OnInit{
+  @Input() card: Card;
+  @Input() index: number;
   title = 'My Card Title';
   text = 'My sample text';
+  cardDate: Date = new Date();
   textColor: string;
   // tslint:disable-next-line:typedef
   ngOnInit() {}
